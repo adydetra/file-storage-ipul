@@ -8,9 +8,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/upload', function () {
+    return view('upload');
+})->middleware(['auth', 'verified'])->name('upload');
 
 // Auth
 Route::middleware('auth')->group(function () {
